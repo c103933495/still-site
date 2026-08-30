@@ -72,8 +72,8 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 
 <h3>2. Sign in with Apple</h3>
 <p>Still requires Sign in with Apple before you can access the app.</p>
-<p>Still does not request your name or email address. It stores the Apple account identifier returned through the authorization process only on your device, so Still can confirm your access on later launches.</p>
-<p>This identifier is not sent to Supabase or another Still server, and it is not used for third-party advertising or cross-app tracking.</p>
+<p>Still does not request your name or email address. When you sign in, Still stores the Apple account identifier on your device and establishes a Supabase authentication session using Apple’s authorization token. This session lets Still securely associate account-only features, such as a Journey Gift, with the correct Still user.</p>
+<p>Still does not use this information for third-party advertising or cross-app tracking.</p>
 
 <h3>3. Information Stored on Your Device</h3>
 <p>Certain information related to your use of Still may be stored locally on your device. This may include saved content, listening history, playback progress, content and interface preferences, and temporary cached data.</p>
@@ -84,7 +84,7 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 <p>The app may receive limited information from Apple necessary to determine whether a subscription or purchase is active, restore purchases, and provide access to purchased content. Apple's handling of purchase and payment information is governed by Apple's own terms and privacy policies.</p>
 
 <h3>5. Content Delivery and Service Providers</h3>
-<p>Still uses Supabase infrastructure to deliver certain remote content and related services, including audio and image resources.</p>
+<p>Still uses Supabase infrastructure to provide authentication, Journey Gift access records, and certain remote content and related services, including audio and image resources.</p>
 <p>The Still app does not intentionally collect or upload your precise location, advertising identifier, contacts, or similar device information for advertising purposes.</p>
 <p>When the app communicates with online services, service providers and their network infrastructure may automatically process limited technical information necessary to operate, secure, and troubleshoot those services. This may include information such as IP addresses, request metadata, User-Agent information, and error or security logs.</p>
 <p>Such technical processing is not used by Still for cross-app tracking or third-party advertising.</p>
@@ -94,8 +94,8 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 
 <h3>7. Data Retention and Deletion</h3>
 <p>Information stored locally by Still may remain on your device until it is removed through the app, cleared by the operating system, or removed when the app is deleted, depending on the type of data.</p>
-<p>You can use Delete Local Account Data in Still to remove Still's locally stored Apple authorization identifier, saved content, listening history, playback progress, and onboarding state from your device. This action does not delete or change your Apple account and does not cancel an active Apple subscription.</p>
-<p>Still does not create a server-side user profile or sync these local account data to Supabase. You may contact us regarding privacy questions using the email address provided below.</p>
+<p>You can use Delete Local Account Data in Still to remove Still's locally stored Apple authorization identifier, saved content, listening history, playback progress, and onboarding state from your device. This action does not delete or change your Apple account, cancel an active Apple subscription, or remove a Journey Gift that has already been assigned to your Still account.</p>
+<p>Still does not sync your saved content, listening history, or playback progress to Supabase. You may contact us regarding privacy questions or a request to delete server-side Gift access records using the email address provided below.</p>
 
 <h3>8. Children's Privacy</h3>
 <p>Still is not intended to knowingly collect personal information from children in violation of applicable law. If you believe that a child has provided personal information to Still in circumstances that require parental consent or deletion, please contact us.</p>
@@ -113,8 +113,8 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 <p>Still provides audio and written content intended for reflection, personal growth, relaxation, and general informational purposes. Still does not provide medical, psychological, psychiatric, legal, financial, or other professional advice.</p>
 
 <h3>2. Your Account</h3>
-<p>Still requires you to authenticate using Sign in with Apple before accessing the app. Still does not request your name or email address, create a server-side user profile, or sync your saved content, listening history, or playback progress to the cloud.</p>
-<p>You can sign out at any time. Delete Local Account Data removes Still's locally stored authorization identifier and local app data from your device; it does not delete or change your Apple account.</p>
+<p>Still requires you to authenticate using Sign in with Apple before accessing the app. Still does not request your name or email address. It uses a Supabase authentication session to securely associate account-only features, such as Journey Gifts, with the correct Still user. Still does not sync your saved content, listening history, or playback progress to the cloud.</p>
+<p>You can sign out at any time. Delete Local Account Data removes Still's locally stored authorization identifier and local app data from your device; it does not delete or change your Apple account or remove a Journey Gift already assigned to your Still account.</p>
 
 <h3>3. Free and Paid Content</h3>
 <p>Still may provide both free and paid content. Access to certain Deep Journeys, audio programs, features, or other content may require an active subscription or other purchase.</p>
@@ -123,31 +123,34 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 <p>Where Still offers an auto-renewable subscription, payment is charged through your Apple ID account in accordance with the terms displayed at the time of purchase. Subscriptions automatically renew unless cancelled in accordance with Apple's subscription rules.</p>
 <p>You can manage or cancel your subscription through your Apple account's subscription settings. Deleting the Still app does not automatically cancel an active subscription.</p>
 
-<h3>5. Purchases and Refunds</h3>
+<h3>5. Journey Gifts</h3>
+<p>An active Still member may share a Deep Journey or an archived Weekly Reflection using a Gift link. A currently free Weekly Reflection may also be shared while it is among the latest three free reflections. A Gift gives its recipient access only to that specific Journey or Reflection; it does not create or transfer a Still membership. Each Gift link may be redeemed by one eligible Still user. Gift access may remain available after a recipient’s membership ends or after a free Reflection leaves the latest-three window.</p>
+
+<h3>6. Purchases and Refunds</h3>
 <p>Purchases made through Still are processed by Apple. Still does not directly process your payment card information. Refund requests for purchases made through the App Store are generally handled by Apple and are subject to Apple's applicable policies and terms.</p>
 
-<h3>6. Intellectual Property</h3>
+<h3>7. Intellectual Property</h3>
 <p>Still and its original content—including audio recordings, written material, artwork, visual design, branding, and other original materials—are protected by applicable intellectual property laws. Your access to Still gives you a limited right to use its content for personal, non-commercial purposes.</p>
 
-<h3>7. Availability of the Service</h3>
+<h3>8. Availability of the Service</h3>
 <p>We aim to keep Still available and reliable, but we cannot guarantee that every feature, audio file, or online service will always be available without interruption.</p>
 
-<h3>8. Disclaimer</h3>
+<h3>9. Disclaimer</h3>
 <p>Still's reflective and educational content is provided for general informational and personal-use purposes. Individual experiences and results may vary.</p>
 
-<h3>9. Apple App Store Terms</h3>
+<h3>10. Apple App Store Terms</h3>
 <p>If you downloaded Still through Apple's App Store, your use of the app is also subject to Apple's applicable App Store terms and license agreement. Where Apple's Standard Licensed Application End User License Agreement applies to Still, that agreement applies in addition to these Terms.</p>
 
-<h3>10. Changes to These Terms</h3>
+<h3>11. Changes to These Terms</h3>
 <p>We may update these Terms from time to time to reflect changes to Still, our services, or applicable requirements. The latest version will be made available through Still or this website.</p>
 
-<h3>11. Contact</h3>
+<h3>12. Contact</h3>
 <p><strong>Still Support</strong><br>Email: <a href="mailto:crx1955@163.com">crx1955@163.com</a></p></article>
     <article class="policy"><h2 id="support">Support</h2>
 <h3>We're here to help.</h3>
 <p>If you have a question or experience a problem with Still, please contact us at:</p>
 <p><strong><a href="mailto:crx1955@163.com">crx1955@163.com</a></strong></p>
-<p>You can contact us about accessing Still or your account, subscriptions and membership, restoring purchases, audio playback or other technical issues, privacy or account-related requests, or general questions and feedback.</p>
+<p>You can contact us about accessing Still or your account, subscriptions and membership, Journey Gifts, restoring purchases, audio playback or other technical issues, privacy or account-related requests, or general questions and feedback.</p>
 <p>When reporting a technical issue, please include a brief description of what happened and, if possible, your iPhone model and iOS version. Please do not send passwords, payment card information, or other sensitive information by email.</p>
 
 <h3>Subscriptions</h3>
@@ -157,7 +160,7 @@ footer .tag{font-family:Georgia,"Times New Roman",serif;color:var(--warm);font-s
 <p>If you have an active subscription but paid content is not available, first use <strong>Restore Purchases</strong> within Still. If the issue continues, contact us at the email address above.</p>
 
 <h3>Sign in with Apple and Local Account Data</h3>
-<p>If you cannot sign in with Apple, confirm that you are signed in to an Apple account on your device, then try again. You can sign out from Still's Account screen. To remove Still's local Apple authorization identifier, saved content, listening history, and playback progress from your device, use <strong>Delete Local Account Data</strong> in the Account screen. This does not delete or change your Apple account and does not cancel an active subscription.</p>
+<p>If you cannot sign in with Apple, confirm that you are signed in to an Apple account on your device, then try again. You can sign out from Still's Account screen. To remove Still's local Apple authorization identifier, saved content, listening history, and playback progress from your device, use <strong>Delete Local Account Data</strong> in the Account screen. This does not delete or change your Apple account, cancel an active subscription, or remove a Journey Gift already assigned to your Still account.</p>
 
 <h3>Refunds</h3>
 <p>Payments made through the App Store are processed by Apple. Refund eligibility and refund requests are handled according to Apple's applicable policies.</p></article>
