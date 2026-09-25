@@ -294,6 +294,17 @@ body.guide-open{overflow:hidden}
   const guideClose = guide.querySelector('.guide-close');
   const guideGotIt = guide.querySelector('.guide-got-it');
   const isTikTokBrowser = /TikTok|musical_ly/i.test(navigator.userAgent);
+  const appStoreUrl = 'https://apps.apple.com/us/app/still-inner-peace/id6805919051?l=zh-Hans-CN';
+  const pageUrl = new URL(window.location.href);
+
+  // TikTok normally preserves the current web address when the user chooses
+  // “Open in browser”. In Safari, this marker makes that handoff continue to
+  // the App Store automatically, without a second tap on a download button.
+  if (!isTikTokBrowser && pageUrl.searchParams.get('still_download') === '1') {
+    pageUrl.searchParams.delete('still_download');
+    history.replaceState(null, '', pageUrl);
+    window.location.replace(appStoreUrl);
+  }
   const closeBrowserGuide = () => {
     guide.classList.remove('is-visible');
     guide.setAttribute('aria-hidden', 'true');
@@ -309,6 +320,9 @@ body.guide-open{overflow:hidden}
     link.addEventListener('click', (event) => {
       if (!isTikTokBrowser) return;
       event.preventDefault();
+      const handoffUrl = new URL(window.location.href);
+      handoffUrl.searchParams.set('still_download', '1');
+      history.replaceState(null, '', handoffUrl);
       openBrowserGuide();
     });
   });
