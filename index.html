@@ -316,14 +316,18 @@ body.guide-open{overflow:hidden}
     document.body.classList.add('guide-open');
     guideGotIt.focus();
   };
+  // The marker is now in TikTok's actual page address, so “Open in browser”
+  // will pass it on to Safari instead of reopening the original page.
+  if (isTikTokBrowser && pageUrl.searchParams.get('still_download') === '1') {
+    openBrowserGuide();
+  }
   document.querySelectorAll('[data-app-download]').forEach((link) => {
     link.addEventListener('click', (event) => {
       if (!isTikTokBrowser) return;
       event.preventDefault();
       const handoffUrl = new URL(window.location.href);
       handoffUrl.searchParams.set('still_download', '1');
-      history.replaceState(null, '', handoffUrl);
-      openBrowserGuide();
+      window.location.replace(handoffUrl);
     });
   });
   guideClose.addEventListener('click', closeBrowserGuide);
@@ -334,4 +338,3 @@ body.guide-open{overflow:hidden}
 </script>
 </body>
 </html>
-
